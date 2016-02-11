@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :cocktails do
-    resources :doses, only: [:new, :show, :create]
+    resources :doses, only: [:new, :show, :create, :edit, :update]
   end
   resources :doses, only: [:destroy]
   root 'cocktails#index'

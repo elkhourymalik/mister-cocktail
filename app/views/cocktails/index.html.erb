@@ -8,6 +8,14 @@
               <%= link_to(cocktail_path(cocktail)) do %>
                 <%= cocktail.name %>
               <% end %>
+              <% if cocktail.user == current_user %>
+                <%= link_to(edit_cocktail_path(cocktail)) do %>
+                  <i class="fa fa-pencil" id="edit"></i>
+                <% end %>
+                <%= link_to(cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"}) do %>
+                  <i class="fa fa-trash-o" id="delete"></i>
+                <% end %>
+              <% end %>
             </div>
           <% end %>
         </div>
