@@ -13,3 +13,10 @@
 .alert-warning {
   background: $red;
 }
+.notice{
+  background: $gray-lighter !important;
+  margin: 0;
+}
+.alert{
+  background: $gray-lighter;
+}
