@@ -1,0 +1,19 @@
+<div class="bg-lighter-grey padded">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="box">
+          <div class="card_resto min_200">
+            <h2 class="resto_name"><%= @cocktail.name %></h2>
+            <div class="cocktail_dose">
+              <% @cocktail.doses.each do |dose| %>
+                <p><%= dose.description %> <%= dose.ingredient.name %> </p>
+              <% end %>
+            </div>
+            <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

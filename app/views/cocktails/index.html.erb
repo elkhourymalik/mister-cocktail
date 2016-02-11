@@ -1,0 +1,17 @@
+<div class="bg-lighter-grey padded">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <div class="box">
+          <% @cocktails.each do |cocktail| %>
+            <div class="card_white min_200">
+              <%= link_to(cocktail_path(cocktail)) do %>
+                <%= cocktail.name %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
