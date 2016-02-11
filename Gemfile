@@ -51,6 +51,8 @@ group :development do
   gem 'better_errors'
 end
 
+gem 'devise'
+
 gem 'rspec-rails', group: [ :test ]
 
 ruby '2.3.0'
