@@ -1,4 +1,4 @@
-<div class="bg-lighter-grey padded">
+<div class="bg-lighter-grey">
   <div class="container text-center">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -7,17 +7,19 @@
             <h2 class="resto_name"><%= @cocktail.name %></h2>
             <div class="cocktail_dose">
               <% @cocktail.doses.each do |dose| %>
-                <p>
-                <%= dose.description %> <%= dose.ingredient.name %>
-                <% if @cocktail.user == current_user %>
-                  <%= link_to(edit_cocktail_dose_path(@cocktail, dose)) do %>
-                    <i class="fa fa-pencil" id="edit"></i>
+                <div class="card_white">
+                  <p>
+                  <%= dose.description %> <%= dose.ingredient.name %>
+                  <% if @cocktail.user == current_user %>
+                    <%= link_to(edit_cocktail_dose_path(@cocktail, dose)) do %>
+                      <i class="fa fa-pencil" id="edit"></i>
+                    <% end %>
+                    <%= link_to(dose_path(dose), method: :delete, data: {confirm: "Are you sure?"}) do %>
+                      <i class="fa fa-trash-o" id="delete"></i>
+                    <% end %>
                   <% end %>
-                  <%= link_to(dose_path(dose), method: :delete, data: {confirm: "Are you sure?"}) do %>
-                    <i class="fa fa-trash-o" id="delete"></i>
-                  <% end %>
-                <% end %>
-                </p>
+                  </p>
+                </div>
               <% end %>
               <%= image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
             </div>

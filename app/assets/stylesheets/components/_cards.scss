@@ -9,3 +9,68 @@
   font-weight: normal;
   font-size: 20px;
 }
+#delete{
+  position: absolute;
+  align-self: center;
+  right: 10px;
+}
+#edit{
+  position: absolute;
+  align-self: center;
+  right: 40px;
+}
+.card_cocktail{
+  position: relative;
+  background: white;
+  margin: 10px;
+  padding: 10px;
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.cocktail_image{
+  position: absolute;
+  top: 50px;
+}
+.cocktail_title{
+  margin: 0px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: blue;
+}
+.cocktail_edit{
+  position: absolute;
+  top: 10px;
+  right: 40px;
+}
+.cocktail_delete{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}
+.fa{
+  color: #7F7F7F;
+  opacity: 0.5;
+}
+.fa:hover{
+  opacity: 1;
+}
+
+
+
+
+
+
+
+

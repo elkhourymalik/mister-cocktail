@@ -1,25 +1,33 @@
-<div class="bg-lighter-grey padded">
-  <div class="container text-center">
+<div class="bg-lighter-grey">
+  <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-        <div class="box">
-          <% @cocktails.each do |cocktail| %>
-            <div class="card_white min_200">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card_cocktail">
+            <div class="card_link">
               <%= link_to(cocktail_path(cocktail)) do %>
-                <%= cocktail.name %>
-              <% end %>
-              <% if cocktail.user == current_user %>
-                <%= link_to(edit_cocktail_path(cocktail)) do %>
-                  <i class="fa fa-pencil" id="edit"></i>
-                <% end %>
-                <%= link_to(cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"}) do %>
-                  <i class="fa fa-trash-o" id="delete"></i>
+                <% if cocktail.photo.present? %>
+                  <%= image_tag cocktail.photo, height: 100, width: 100, crop: :fill, class:"cocktail_image"%>
+                <% else %>
+                  <%= image_tag "logo.png", height: 100, width: 100, crop: :fill, class:"cocktail_image"%>
                 <% end %>
               <% end %>
             </div>
-          <% end %>
+            <h2 class="cocktail_title"><%= cocktail.name %></h2>
+            <% if cocktail.user == current_user %>
+              <%= link_to(edit_cocktail_path(cocktail)) do %>
+                <i class="fa fa-pencil cocktail_edit"></i>
+              <% end %>
+              <%= link_to(cocktail_path(cocktail), method: :delete, data: {confirm: "Are you sure?"}) do %>
+                <i class="fa fa-trash-o cocktail_delete"></i>
+              <% end %>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+
+
