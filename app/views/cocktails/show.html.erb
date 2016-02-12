@@ -6,6 +6,11 @@
           <div class="card_resto min_200">
             <h2 class="resto_name"><%= @cocktail.name %></h2>
             <div class="cocktail_dose">
+              <% if @cocktail.photo.present? %>
+                <%= image_tag @cocktail.photo, height: 300, width: 300, crop: :fill %>
+              <% else %>
+                <%= image_tag "logo.png", height: 300, width: 300, crop: :fill %>
+              <% end %>
               <% @cocktail.doses.each do |dose| %>
                 <div class="card_white">
                   <p>
@@ -21,7 +26,6 @@
                   </p>
                 </div>
               <% end %>
-              <%= image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
             </div>
             <% if @cocktail.user == current_user %>
               <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
