@@ -19,6 +19,7 @@
                 <% end %>
                 </p>
               <% end %>
+              <%= image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
             </div>
             <% if @cocktail.user == current_user %>
               <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>

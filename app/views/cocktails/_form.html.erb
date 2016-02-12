@@ -6,6 +6,8 @@
         <div class="box">
           <%= simple_form_for @cocktail do |f| %>
             <%= f.input :name, label: false, placeholder: "Name" %>
+            <%= f.input :photo, label: false, placeholder: "Image" %>
+
             <%= f.button :submit, class: "btn btn-primary" %>
           <% end %>
         </div>
