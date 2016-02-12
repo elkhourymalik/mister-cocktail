@@ -9,7 +9,7 @@ gem 'figaro'
 
 gem "carrierwave"
 gem "mini_magick"
-gem "fog-aws"
+gem "fog"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
