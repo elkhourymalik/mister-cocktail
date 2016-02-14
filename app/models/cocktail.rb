@@ -5,4 +5,10 @@ class Cocktail < ActiveRecord::Base
   has_many :ingredients, through: :doses
   validates :name, presence: true
   validates :name, uniqueness: true
+
+  rails_admin do
+      configure :user do
+        label 'Owner of this cocktail: '
+      end
+    end
 end
